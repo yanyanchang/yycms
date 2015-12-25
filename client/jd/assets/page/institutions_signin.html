@@ -1,0 +1,93 @@
+<div class="content" >
+  <form id="signinForm" enctype="multipart/form-data" method="post" >
+    <div class="step1"> <br/>
+      <div class="signin-base border-top border-bottom">
+        <div class="input-box"><span>机构名称：</span>
+          <input type="text" name="institutions_name" placeholder="请输入机构名称"  />
+        </div>
+        <div class="input-box"><span>证件类型：</span>
+          <div class="select">
+            <label>请选择证件类型</label>
+            <select name="certificate_type" class="select">
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+        <div class="input-box"><span>证件号：</span>
+          <input type="tel" name="certificate_no" placeholder="请输入证件号"  />
+        </div>
+        <div class="input-box"><span>联系人：</span>
+          <input type="tel" name="contact" placeholder="请输入联系人姓名"  />
+        </div>
+        <div class="input-box"><span>手机号码：</span>
+          <input type="tel" name="phone" placeholder="请输入11位手机号码"  />
+        </div>
+        <div class="input-box no-border-bottom"><span>&nbsp;验&nbsp;证&nbsp;码：</span>
+          <input type="tel" name="vcode" placeholder="输入验证码"  />
+          <span class="vcode-send">发送验证码</span> </div>
+      </div>
+      <br/>
+      <div class="signin-recommended border-top border-bottom">
+        <div class="input-box no-border-bottom"><span>&nbsp;推&nbsp;荐&nbsp;码：</span>
+          <input type="text" name="serialcode" placeholder="请输入推荐码" value="{{serialcode}}" />
+        </div>
+        <!--
+                <div class="input-box no-border-bottom"><span>推荐机构：</span>
+                    <input type="text" name="serialcode_institutions" placeholder="推荐机构" readonly />
+                </div>
+                --> 
+        
+      </div>
+      <br/>
+      <div align="center">
+        <button type="button" id="signin_btn1" class="button">下一步</button>
+      </div>
+    </div>
+    <div class="step2" > <br/>
+      <div class="upload-photo" id="photo_upload_1"><i class="fa fa-camera"></i> 身份证正面
+        <input type="file" name="file1" accept="image/*" capture="camera">
+      </div>
+      <br/>
+      <div class="upload-photo" id="photo_upload_2"><i class="fa fa-camera"></i> 身份证反面
+        <input type="file" name="file2" accept="image/*" capture="camera">
+      </div>
+      <br/>
+      <div class="upload-photo" id="photo_upload_3"><i class="fa fa-camera"></i> 银行卡正面
+        <input type="file" name="file3" accept="image/*" capture="camera">
+      </div>
+      <br/>
+      <div align="center">
+        <button type="button" id="signin_btn2" class="button">上传并提交</button>
+      </div>
+    </div>
+    <!--
+        <div class="step3" > <br/>
+            <div class="password-div border-top border-bottom">
+                <div class="input-box"><span>&nbsp;密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
+                    <input type="password" name="password" id="txt_password" placeholder="请输入密码" />
+                </div>
+                <div class="input-box no-border-bottom"><span>密码确认：</span>
+                    <input type="password" name="txt_repassword" placeholder="再次输入密码" />
+                </div>
+            </div>
+            <br/>
+
+            <div align="center">
+                <button type="button" id="signin_btn3" class="button">提交注册</button>
+            </div>
+        </div>
+        <div class="step4">
+            <br/>
+            <div class="icon1">
+                <img src="skin/images/login_success.png"/>
+            </div>
+            <div class="font-m" align="center">注册成功！</div>
+            <br/>
+            <div align="center">
+                <button type="button" id="signin_btn4" class="button">完&nbsp;&nbsp;成</button>
+            </div>
+        </div>
+        -->
+        <input name="action" type="hidden" value="" />
+  </form>
+</div>

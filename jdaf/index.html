@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+<head>
+<title>微交易</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="appf/build/af.ui.css" />
+<link rel="stylesheet" type="text/css" href="css/myself.af.ui.css" />
+<link rel="stylesheet" type="text/css" href="appf/build/icons.css" />
+<script type="text/javascript" charset="utf-8" src="common/jquery.min.js"></script>
+<script src="appf/build/appframework.ui.js"></script>
+<script type="text/javascript" charset="utf-8" src="common/fastclick.min.js"></script>
+<script src="common/underscore-min.js"></script>
+<script src="common/backbone-min.js"></script>
+ <!-- font-awesome -->
+ <link type="text/css" href="common/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" >
+<!-- owl -->
+<link rel="stylesheet" href="common/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="common/owl-carousel/owl.theme.css">
+<script src="common/owl-carousel/owl.carousel.js?v=beta.1.8"></script>
+    <!-- iscroll5 -->
+ <script src="common/iscroll.js?v=5"></script>
+</head>
+
+<body id="todoaf">
+<div id="splashscreen" class='ui-loader heavy'> 
+  <!--
+  <span class='ui-icon ui-icon-loading spin'></span>
+-->
+  <h1>加载中...</h1>
+</div>
+<div class="pages" style=" z-index: 999;" id="login_page">
+<div  id="login"  class="panel bg-2E3E4F"   >
+    <div id="logo-content">
+        <div><img src="image/logo.png" id="logo"/></div>
+         <div><img src="image/picexchangename.png" id="piclogo_jdname"/></div>
+         </div>
+    <div id="login_form">
+        <input id="txtlogin_uid" type="text" placeholder="请输入登录帐号"/>
+        <input id="txtlogin_pwd" type="password" placeholder="请输入登录密码"/>
+        <button type="button" id="btnlogin_submit" >登    录</button>
+    </div>
+</div>
+    </div>
+
+<!-- main -->
+<div class="view" id="mainview">
+  <div class="pages bg-E7E7E7">
+    <div class="panel" id="main"  data-selected="true">
+      <div id="main_top" >
+        <div id="menu_col">
+          <div id="menu_btn" class="normal-button"  >
+              <a href="#" data-left-menu="left" data-transition="push"> <img src="image/menu.png" /></a>
+
+          </div>
+        </div>
+        <div id="info_col">
+          <div class="acc_username_txt"></div>
+          <div class="acc_money_txt"></div>
+        </div>
+        <div id="holdlist_col">
+            <a href="#holdlist" id="holdlist_btn" class="red-button" data-transition="fade">
+                持仓
+            </a>
+
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div id="main_content">
+        <div id="trade_title_txt">商品列表</div>
+          <div id="trade_list_scroll">
+              <ul class="list" id="trade_list">
+              </ul>
+          </div>
+      </div>
+
+      
+      <div id="tip">
+        <ul>
+          <li> <a href="page/guide.html"   data-persist-ajax="true" data-transition="up" date-foo="guide"> <img src="image/picnav_guide.png"/> <span>交易指南</span> </a> </li>
+          <li> <a href="page/rules.html"  data-persist-ajax="true" data-transition="up" date-foo="rules"> <img src="image/picnav_ruler.png"/> <span>交易规则</span></a> </li>
+          <li> <a href="page/contract.html"  data-persist-ajax="true" data-transition="up" date-foo="contract"><img src="image/picnav_service.png"/><span>联系客服</span></a> </li>
+          <li> <a href="page/active.html"  data-persist-ajax="true" data-transition="up" date-foo="active"><img src="image/picnav_event.png"/><span>有奖活动</span></a> </li>
+          <div class="clear"></div>
+        </ul>
+      </div>
+     
+    </div>
+
+    <div class="panel" id="holdlist">
+        <ul id="holdlist_header">
+            <li >
+                <a id="main_menu" onclick="$.afui.loadContent('#main',false,false,'fade');" >
+                <i class="fa fa-home"></i>
+                首页</a>
+              </li>
+            <li> <a id="holdlist_menu"  class="active" >
+                <i class="fa fa-search"></i>
+                持仓查询</a></li>
+            <li> <a id="history_menu"  onclick="$.afui.loadContent('#history',false,false,'fade');" >
+                <i class="fa fa-history"></i>
+                交易历史</a></li>
+            <div class="clear"></div>
+        </ul>
+          <div id="holdlist_content">
+              <div id="hold_list_wrapper">
+                  <ul id="hold_list"></ul>
+              </div>
+
+          </div>
+      </div>
+      <div class="panel" id="history">
+          <ul id="history_header">
+              <li> <a class="main_menu" onclick="$.afui.loadContent('#main',false,false,'fade');" >
+                  <i class="fa fa-home"></i>
+                  首页</a></li>
+
+              <li> <a class="holdlist_menu" onclick="$.afui.loadContent('#holdlist',false,false,'fade');"  >
+                  <i class="fa fa-search"></i>
+                  持仓查询</a></li>
+              <li> <a class="history_menu"  class="active">
+                  <i class="fa fa-history"></i>
+                  交易历史</a></li>
+              <div class="clear"></div>
+          </ul>
+
+
+              <div class="info_col">
+                  <ul>
+                      <li><div><br/><br/>账户余额<br/><span class="txt-BB0000 acc_money_txt"></span></div></li>
+                      <li><div><br/><br/>当日盈亏<br/><span class="txt-BB0000 acc_orderporfit" ></span></div></li>
+                      <li><div><br/><br/>当日单数<br/><span class="txt-BB0000 acc_ordernum" ></span></div></li>
+                      <div class="clear"></div>
+                  </ul>
+                  <div style="height: 20px;" class="bg-E7E7E7"></div>
+              </div>
+
+
+          <div id="history_content">
+              <div id="history_list_wrapper">
+              <ul id="history_list"></ul>
+
+              </div>
+              </div>
+
+      </div>
+    <div class="panel" id="trade"></div>
+    <div class="panel" id="password"></div>
+    <div class="panel" id="account"></div>
+  </div>
+  <nav id="left" class="bg-2E3E4F">
+    <div class="view active">
+      <div class="pages bg-2E3E4F">
+        <div class="panel active" id="left_menu" >
+          <div id="left_logo"> <img src="image/logo.png"/> </div>
+          <ul id="menu_list">
+            <li page="account">个人信息</li>
+           <li  page="main" class="active">商品报价</li>
+              <li  page="trade">委托交易</li>
+               <li  page="holdlist">持仓时细</li>
+              <li  page="history">历史交易</li>
+           <li  page="password">密码修改</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- main -->
+</body>
+<script type="text/html" id="tradeTemplate">
+<% _.each(datas, function (item) { %>
+<li class="symbol<%=item.symbolCode%>"><a onclick="window.symbolCode='<%=item.symbolCode%>';$.afui.loadContent('#trade',false,false,'fade');" ><%=item.symbolName%> <span>
+<%=item.priceCurrent%></span></a></li>
+<% }); 
+%>
+<%if(!datas){%>  
+<li><a href="">暂无产品</a></li>
+<%}%>
+</script>
+<script type="text/html" id="symbolListTemplate">
+    <% _.each(datas, function (item) { %>
+    <li class="item" onclick="tradeView.goodsChange('<%=item.symbolCode%>',false)" symbolCode="<%=item.symbolCode%>">
+        <%if(item.symbolCode==symbolCode){%>
+        <div class="active" symbolCode="<%=item.symbolCode%>">
+            <%}else{%>
+            <div symbolCode="<%=item.symbolCode%>">
+                <%}%>
+                <img src="image/<%=item.symbolCode%>_W.png"  onerror="javascript:this.src='image/GOOD_W.png';" ><span><%=item.symbolName%></span>
+            </div>
+    </li>
+    <% });%>
+
+</script>
+<script type="text/html" id="holdListTemplate">
+    <% _.each(datas, function (item) { %>
+    <li  class="<%=item.symbolCode%>" bsCode="<%=item.bsCode%>" amount="<%=item.amount%>" profitRate="<%=item.profitRate%>" priceOrder="<%=item.priceOrder%>">
+        <table cellpadding="0" cellspacing="0" border="0" class="list-item-<%=item.orderCode%> list<%=item.symbolCode%>">
+            <tr><td style="width: 70px; background: #990000;height:5px">
+            </td><td colspan="4"></td></tr>
+            <tr>
+                <td style="width: 90px; background: #990000;text-align: center; vertical-align: middle;color: #FFF;" class="latestPrice">
+                    最新价格<br/><%=item.priceCurrent%>
+                </td><td style="width: 50px" align="center">
+                <img src="<%=item.orderDirect%>" />
+            </td><td style="border-left: 1px solid #999999;" align="center">
+                建仓价<br>￥<%=item.priceOrder.toFixed(item.decimal)%>
+            </td><td style="border-left: 1px solid #999999;" align="center">
+                投资金额<br>￥<%=item.amount.toFixed(0)%>
+            </td><td style="border-left: 1px solid #999999;" class="profit" align="center">
+                盈利<br><span class="<%=item.profitColor%>"><%=item.profit%></span>
+            </td>
+            </tr>
+            <tr style="height: 32px">
+                <td style="background: #990000;text-align: center;color: #ffffff; font-size: 14px">
+                    <%=item.symbolName%>
+                </td><td colspan="4" style="text-align: left;padding-left: 5px;"><div style="position:relative;">
+                到期时间 :<%=item.endDateStr%>
+                <span style="color:#990000"></span>
+                <br/>
+                剩余时间 :<span style="color:#009900" class="last-time"></span>
+                <!--<span style="color:#009900" class="last-time"></span>-->
+                <div class="progress"><span style="width: 100%;" class="green"><span>100%</span></span></div>
+            </div></td>
+            </tr>
+        </table></li>
+    <% });%>
+    <%if(datas.length==0){%>
+    <div class="empty">持仓为空</div>
+    <%}%>
+</script>
+<script type="text/html" id="historyListTemplate">
+<% _.each(datas, function (item) { %>
+    <%if(item.closedQuantity>0){%>
+<li>
+<table  cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td colspan="4" style="border-bottom:1px solid #efefef;">
+            <div style="float:left;width: 100%; line-height: 2;border-bottom:1px solid #efefef; text-align: center">交易编号:<%=item.orderCode%> </div>
+            <div style="float:left;width: 100%; line-height: 2;text-align: center">下单时间:<%=item.orderTime%></div>
+           </td>
+    </tr>
+    <tr>
+        <td rowspan="2" align="center" style="border-right:1px solid #efefef;" width="72">
+		<%=item.symbolName%><br/>
+		<img src="image/<%=item.symbolCode %>_B.png" onerror="javascript:this.src='image/GOOD_B.png';"/>
+		</td>
+        <td align="center" style="border-bottom:1px solid #efefef;border-right:1px solid #efefef;height: 37px;" width="72">
+            <div>执行价格<img src="<%=item.orderDirect%>" width="20" style="display: inline-block" /></div>
+           <%=item.holdPrice%> </td>
+        <td align="center">到期价格<br/><%=item.closedQuantity%></td>
+        <td rowspan="2" align="center" style="border-left:1px solid #efefef;" width="62">盈亏<br/>
+            <b>
+            <%=item.profitHtml%>
+            </b>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="50"style="border-right:1px solid #efefef;height: 37px;"  width="72">投资金额<br/><%=item.orderQuantity%></td>
+        <td align="center"style="border-top:1px solid #efefef;">到期时间<br/><%=item.validDate%></td>
+    </tr>
+</table>
+</li>
+    <%}%>
+<% });%>
+<%if(!datas){%>
+    <div class="empty">没有相关记录</div>
+<%}%>
+
+</script>
+<script type="text/javascript" charset="utf-8" src="common/jquery.similar.msgbox.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/wetbizsdk/sdk/wetbizsdk-all_src.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/trade_view.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/password_view.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/account_view.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/hold_view.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/history_view.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/login_view.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/main_view.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/define.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+</html>

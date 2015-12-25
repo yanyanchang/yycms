@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="{$assets_path}/libs/mobilebone/mobilebone.css">
+    <link rel="stylesheet" href="{$assets_path}/libs/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{$assets_path}/libs/rangeSlider/css/ion.rangeSlider.css">
+    <link rel="stylesheet" href="{$assets_path}/libs/rangeSlider/css/ion.rangeSlider.skinHTML5.css">
+    <link rel="stylesheet" href="{$assets_path}/css/wp/style.css?rnd=<?php echo time(); ?>">
+    <script src="{$assets_path}/libs/skel.min.js?rnd=928">
+        {
+            prefix: '{$assets_path}/css/wp/style',
+                    preloadStyleSheets: true,
+                resetCSS: false,
+                breakpoints: {
+            pcmini: { range: "1024-1200", containers: "fluid" },
+            pad: { range: "641-1023", containers: "fluid" },
+            mobile: { range: "-640", containers: "fluid" }
+        }
+        }
+    </script>
+    <style>
+        .hold-list-history {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            /* Prevent native touch events on Windows */
+            -ms-touch-action: none;
+            /* Prevent the callout on tap-hold and text selection */
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            /* Prevent text resize on orientation change, useful for web-apps */
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+        .scroller {
+            position: absolute;
+            /* Prevent elements to be highlighted on tap */
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            /* Put the scroller into the HW Compositing layer right from the start */
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+    </style>
+    <title>{$title}</title>
+</head>
+
+<body>
+<div class="loading-box">
+    <div class="loading-logo">
+        <img src="{$assets_path}/images/phonelogo.gif"  />
+    </div>
+    <div class="spinner2">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+<div id="pageLogin" class="login-box" >
+    <div class="top"><img src="{$assets_path}/images/login_top.png"/></div>
+    <div class="input-box"><span>帐 号：</span>
+        <input type="text" name="account"  placeholder="请输入帐号" value="<php>echo $_GET['code']</php>"   maxlength="15"/>
+    </div>
+    <div class="tipstext" for="account"></div>
+    <div class="input-box"><span>密 码：</span>
+        <input type="password" name="password" placeholder="请输入密码" maxlength="15"/>
+    </div>
+    <div class="loginbtn-box">
+        <button type="button" id="login_btn" class="button">登录</button>
+    </div>
+    <br/>
+    <div align="center"> <a onClick="location.href='{:U('register/'.session('group_name'))}'" class="b-link" >免费开户</a>
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp; <a onClick="pageForgotFun()" class="b-link">找回密码</a>-->
+    </div>
+</div>
+<!--
+<div id="pageXy" class="page out"></div>
+<div id="pageForgot" class="page out"></div>
+-->
+<div id="pageTrade" class="page in"></div>
+<div id="pageSignin" class="page out"></div>
+<div id="pageGoods" class="page out"></div>
+<div id="pageHold" class="page out"></div>
+<div id="pageAccount" class="page out"></div>
+<div id="pageMore" class="page out"></div>
+<div id="pageNote1" class="page out"></div>
+<div id="pageNote2" class="page out"></div>
+<div id="pageNote3" class="page out"></div>
+<div id="pageHistory" class="page out"></div>
+<div id="pageOption" class="page out"></div>
+<script>
+var assets_path   = '{$assets_path}';
+var api_path      = '{$api_path}';
+</script>
+<script type="text/javascript" src="{$assets_path}/libs/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{$assets_path}/libs/fastclick.js"></script>
+<script type="text/javascript" src="{$assets_path}/libs/mobilebone/mobilebone.js"></script>
+<script type="text/javascript" src="{$assets_path}/libs/iscroll/iscroll.js"></script>
+<script type="text/javascript" src="{$assets_path}/libs/jquery.similar.msgbox.js?rnd=</php>.js?rnd=<php> echo time(); </php>"></script>
+<script type="text/javascript" src="{$assets_path}/libs/artTemplate/template-debug.js"></script>
+<script type="text/javascript" src="{$assets_path}/libs/rangeSlider/js/ion.rangeSlider.js"></script>
+<script type="text/javascript" src="{$assets_path}/libs/wetbizsdk/wetbizsdk.js?rnd=<php> echo time(); </php>"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<eq name="Think.session.group_name" value="moni">
+<script type="text/javascript" src="{$assets_path}/js/mdefine.js"></script>
+<else/>
+<script type="text/javascript" src="{$assets_path}/js/define.js"></script>
+</eq>
+<script type="text/javascript" src="{$assets_path}/js/<php>echo MODULE_NAME.'_'.ACTION_NAME;</php>.js?rnd=<php> echo time(); </php>"></script>
+</body>
+</html>

@@ -1,0 +1,986 @@
+.bg-2E3E4F {
+	background: #2E3E4F !important;
+}
+
+.bg-E7E7E7 {
+	background: #E7E7E7 !important;
+}
+.txt-990000{
+	color: #990000 !important;
+}
+.txt-BB0000{
+	color: #BB0000 !important;
+}
+.green{
+    color: #2D9518 !important;
+}
+.red{
+    color: #BB0000 !important;
+}
+
+.red-button {
+	background: #F30;
+	color: #fff !important;
+	border-radius: 5px;
+	border: none;
+}
+.red-button-hover{
+    background-color: #DC2E1B !important;
+}
+
+.normal-button {
+	color: #000;
+}
+.content{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #efefef;
+	-webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	-moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	box-shadow: 0px 0px 3px 0px #cbcbcb;
+}
+.button{
+	border-radius: 5px;
+	border-color: #ddd;
+}
+.clear {
+	clear: both;
+}
+/* Appframework Reset */
+a:link {
+    color:#000;
+    text-decoration:none;
+}
+
+a:visited {
+    color:#000;
+    text-decoration:none;
+}
+
+a:hover {
+    color:#000;
+    text-decoration:none;
+}
+
+a:active {
+    color:#000;
+    text-decoration:none;
+}
+
+body .afPopup {
+	border: none;
+	border-radius: 0px;
+	background: rgb(231, 231, 231);
+	color: inherit;
+	padding: 0;
+}
+.afPopup {
+	width:90%;
+}
+.afPopup > HEADER {
+	font-weight: bold;
+	font-size: 20px;
+	padding: 0;
+	margin: 0;
+	color: #FFFFFF;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 1em;
+	background: rgb(46, 62, 79);
+}
+.afPopup > FOOTER > A#cancel {
+	float: inherit;
+}
+.afPopup > FOOTER > A#action {
+	float: inherit;
+}
+.popup_done{
+	display: inline-block;
+	width: 110px;
+	height: 45px;
+	text-align: center;
+	background-color: rgb(223, 76, 65);
+	color: #FFFFFF !important;
+	font-size: 20px;
+	line-height: 45px;
+	text-decoration: none;
+	margin:1em 0 1em 1em;
+}
+.popup_cancle{
+	display: inline-block;
+	width: 110px;
+	height: 45px;
+	text-align: center;
+	background-color:rgb(49, 49, 49);
+	color: #FFFFFF !important;
+	font-size: 20px;
+	line-height: 45px;
+	text-decoration: none;
+	margin:1em 1em 1em 0;
+}
+.ui-loader{ background:none; }
+.ui-loader .ui-icon{
+    background-color:#000;
+    opacity:0.5;
+    width:50px;
+    height:50px;
+}
+.loadx{
+    background:url(image/ajax-loader.gif) no-repeat;
+
+    background-size:4em 4em;
+    border-radius:2.28em;
+    background-position:-0.25em -0.25em;
+
+}
+
+
+.trade_message li{
+	width: 50%;
+	float: left;
+	list-style: none;
+}
+.afPopup > DIV{
+	margin: 0;
+}
+.trade_message li div{
+	color: #333;
+	height: 45px;
+	line-height: 45px;
+	background: rgb(255, 255, 255);
+	font-size: 16px;
+	border: 1px solid rgb(231, 231, 231);
+	border-top: none;
+	border-left: none;
+	padding-left: 0.5em;
+}
+.trade_message li span{
+	color: #808080;
+}
+/* Appframework Reset */
+#splashscreen {
+	background: #2E3E4F  !important;
+}
+
+#logo-content {
+	text-align: center;
+	margin-top: 53px;
+}
+
+#logo {
+	/*width: 40%;*/
+    max-height: 200px;
+}
+
+#piclogo_jdname {
+	/*width: 80%;*/
+    max-height: 200px;
+}
+
+#login_form {
+	margin-top: 40px;
+}
+
+#txtlogin_uid ,#txtlogin_pwd {
+	height: 48px;
+	border-radius: 2px;
+	border: none;
+	color: rgb(153, 153, 153);
+	-webkit-box-shadow: 2px 2px 5px 0px #293645;
+	-moz-box-shadow: 2px 2px 5px 0px #293645;
+	box-shadow: 2px 2px 5px 0px #293645;
+}
+
+#txtlogin_uid {
+	background: url(image/piclogin_user.png) #435160 no-repeat;
+	background-position: -10px -5px;
+}
+
+#txtlogin_pwd {
+	background: url(image/piclogin_pwd.png) #435160 no-repeat;
+	background-position: -10px -5px;
+	margin-top: 0.25em;
+}
+
+#btnlogin_submit {
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	border: none;
+	background: #34495E;
+	font-size: 1.5em;
+	color: #fff;
+	-webkit-box-shadow: 2px 2px 5px 0px #293645;
+	-moz-box-shadow: 2px 2px 5px 0px #293645;
+	box-shadow: 2px 2px 5px 0px #293645;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+#main_content ul {
+	margin: 1em;
+}
+
+#main_content {
+	width: 100%;
+	height: auto;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #efefef;
+	-webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	-moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	box-shadow: 0px 0px 3px 0px #cbcbcb;
+}
+/* MainPage */
+#main_top {
+	margin: 1em 0 1em 0;
+}
+
+#trade_title_txt {
+	margin: 0.6em 0 0 0;
+	font-size: 20px;
+	font-weight: bold;
+	text-indent: 1em;
+}
+#trade_list_scroll{
+    overflow: auto;
+}
+
+#holdlist_btn {
+	width: 6em;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	background: url(image/pictrade_checkaccount.png) no-repeat 1em 8px #E84C3D;
+	display: block;
+	text-decoration: none;
+	float: right;
+	text-align: left;
+	text-indent: 3em;
+}
+.holdlist_btn {
+    width: 6em;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    background: url(image/pictrade_checkaccount.png) no-repeat 1em 8px #E84C3D;
+    display: block;
+    text-decoration: none;
+    float: right;
+    text-align: left;
+    text-indent: 3em;
+}
+
+#menu_col {
+	float: left;
+}
+
+#menu_btn {
+	width: 30px;
+	height: auto;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+#info_col {
+	width: 50%;
+	float: left;
+}
+
+#holdlist_col {
+	width: 30%;
+	float: right;
+	text-align: right;
+}
+
+#main_content li {
+	list-style: none;
+	background: #F6F6F6;
+	border: 1px solid #DDDDDD;
+	border-top: none;
+}
+
+#main_content li:first-child {
+	border-top: 1px solid #DDDDDD;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+}
+
+#main_content li:last-child {
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+}
+#main .acc_username_txt{
+    text-indent: 0.5em;
+    line-height: 1.5;
+}
+#main .acc_money_txt{
+    text-indent: 0.5em;
+    line-height: 1.5;
+}
+
+#trade .acc_username_txt{
+    text-indent: 0.5em;
+    line-height: 1.5;
+}
+#trade .acc_money_txt{
+    text-indent: 0.5em;
+    line-height: 1.5;
+}
+
+#trade_list li a {
+	padding-top: 12px;
+	padding-bottom: 10px;
+	color: #333;
+	font-weight: bold;
+}
+
+#trade_list li:hover {
+	background: #EDEDED;
+}
+
+#trade_list span {
+	float: right;
+	margin-right: 1em;
+}
+
+#tip {
+	margin-top: 1em;
+	position: fixed;
+	bottom: 0;
+}
+
+#tip li {
+	display: block;
+	float: left;
+	width: 64px;
+}
+
+#tip li span {
+	display: block;
+	line-height: 1.5;
+}
+
+#tip li a {
+	color: #808080;
+	font-size: 1em;
+    text-decoration: none;
+}
+
+
+/* Menu */
+#left_menu {
+	padding: 0px;
+}
+
+#left_logo {
+	text-align: center;
+	margin-top: 1em;
+}
+
+#menu_list li {
+	height: 2em;
+	line-height: 2em;
+	font-size: 1.5em;
+	color: #fff;
+	text-indent: 0.5em;
+	background: rgb(35, 51, 67);
+	margin-bottom: 0.2em;
+	-webkit-box-shadow: 0px 0px 3px 0px #293645;
+	-moz-box-shadow: 0px 0px 3px 0px #293645;
+	box-shadow: 0px 0px 3px 0px #293645;
+}
+#menu_list li.active{
+    background: #584E2A;
+}
+
+/* Trade */
+#trade_content {
+	width: 100%;
+	height: auto;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #efefef;
+	-webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	-moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	box-shadow: 0px 0px 3px 0px #cbcbcb;
+}
+
+#trade_content .content {
+	padding: 5px 5px 15px 0px;
+}
+
+#trade_money_col {
+	width: 40%;
+	float: left;
+    position: relative;
+}
+
+#trade_money_col span {
+	font-size: 1em;
+	line-height: 1.5;
+	color: #AAAAAA;
+	display: block;
+
+}
+
+
+
+#invest_money {
+	width: 40%;
+	height: 40px;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	float: left;
+	border-radius: 0;
+	background: #F4EEB6;
+	color: #34495E;
+	font-size: 16px;
+	text-align: center;
+}
+
+#add {
+	width: 30px;
+	height: 40px;
+	background: url(image/picinvestplus.gif) #34495E no-repeat;
+	color: #F4EEB6;
+	background-position: center;
+	border: none;
+    position:absolute;
+    top:1.5em;
+    right: 0px;
+    z-index: 100;
+}
+#del {
+    width: 30px;
+    height: 40px;
+    background: url(image/pictrade_minus.gif) #34495E no-repeat;
+    color: #F4EEB6;
+    background-position: center;
+    border: none;
+    position: absolute;
+    top:1.5em;
+    z-index: 100;
+}
+
+#trade_profit_col {
+	width: 30%;
+	float: left;
+}
+
+#trade_profit_col span {
+	font-size: 1em;
+	line-height: 1.5;
+	color: #AAAAAA;
+	display: block;
+}
+
+#trade_profit {
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	text-align: center;
+	background: #E84C3D;
+	color: #F4EEB6;
+	margin: 0 5px 0 5px;
+}
+
+#trade_time_col {
+	width: 30%;
+	float: left;
+}
+
+#trade_time_col span {
+	font-size: 1em;
+	line-height: 1.5;
+	color: #AAAAAA;
+	display: block;
+}
+
+
+.invest_money {
+    height: 40px;
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    position: relative;
+    _filter: alpha(opacity=0);
+) inset; background-color: #F4EEB6;
+}
+
+.invest_money:hover {
+    background-color: #F4EEB6;
+}
+
+.invest_money label {
+    font-size: 16px;
+    line-height: 40px;
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    text-align: center;
+}
+
+.invest_money .select {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    *margin-top: 12px;
+    filter: alpha(opacity=0);
+    font-size: 16px;
+}
+
+
+.timelimit-select {
+	height: 40px;
+	margin: 0 0 5px 0;
+	background: #F7F7F7 url(image/pictrade.gif) no-repeat right top;
+	font-size: 14px;
+	position: relative;
+	_filter: alpha(opacity=0);
+) inset; background-color: #F4EEB6;
+}
+
+.timelimit-select:hover {
+	background-color: #F4EEB6;
+}
+
+.timelimit-select label {
+	font-size: 16px;
+	line-height: 40px;
+	height: 40px;
+	display: block;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+.timelimit-select .select {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	z-index: 4;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	*margin-top: 12px;
+	filter: alpha(opacity=0);
+	font-size: 16px;
+}
+#trade_type_col{
+    height: 55px;
+}
+
+#trade_type_list li {
+	width: 100%;
+	float: left;
+	list-style: none;
+}
+#trade_type_list li div {
+	height: 55px;
+	background: #2E3E4E;
+	text-align: center;
+	color: #FFFFFF;
+	margin-right: 0px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+#trade_type_list li span {
+	font-size: 14px;
+	display: block;
+	line-height: 1.5;
+}
+
+#trade_type_list  .active {
+	background: #E84C3D
+}
+
+#k_time_list{ margin: 1em 0 1em 0;}
+
+#k_time_list li {
+	width: 20%;
+	float: left;
+	list-style: none;
+}
+#k_time_list  li div {
+	display: block;;
+	margin-left: 5px;
+	height: 35px;
+	cursor: pointer;
+	background: #ABB7B9;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 35px;
+}
+#k_time_list .active {
+	background: #E84C3D
+}
+
+#trade_btn {
+	position: relative;
+	background: #2E3E4E;
+	height: 102px;
+    margin-left: 5px;
+}
+
+#down_btn {
+	position: absolute;
+	left: -12px;
+}
+
+#up_btn {
+	position: absolute;
+	right: -12px;
+}
+
+#current_price {
+	position: absolute;
+	left: 50%;
+	width: 116px;
+	height: 102px;
+	font-size: 24px;
+	font-weight: bold;
+;
+	line-height: 102px;
+	color: #FFFFFF;
+	text-align: center;
+	margin-left: -58px;
+	text-algin: center;
+	background: url("image/pictrade_price.gif");
+}
+
+/* HoldList */
+#holdlist_header{
+	background: #E7E7E7;
+	border: none;
+	height: 88px;
+	padding-top: 1em;
+    z-index: 100;
+}
+#holdlist_header ul{
+	padding: 1em 0 1em 0;
+}
+#holdlist_header li{
+	width: 33%;
+	float: left;
+	list-style: none;
+}
+#holdlist_header .icon{
+	display: inline-block;
+	width: 20px;
+	height: 10px;
+}
+#holdlist_header a{
+	height: 55px;
+	line-height: 55px;
+	display: block;
+	text-decoration: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 1em;
+	background: #34495E;
+	border-radius: 5px;
+}
+#holdlist_header a.active{
+	background: #E84C3D;
+}
+#holdlist_menu{ margin: 0 5px 0 5px;}
+
+#hold_list_wrapper{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+#holdlist_content{
+    position: relative;
+}
+#holdview .backButton{
+	display: none;
+}
+#hold_list .empty{
+    background: #efefef;
+    border-radius: 5px;
+    border: 1px solid #efefef;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+    -moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+    box-shadow: 0px 0px 3px 0px #cbcbcb;
+    text-align: center;
+	height:40px;
+	line-height:45px;
+}
+#hold_list li{
+    list-style: none;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #efefef;
+    padding: 5px 0 5px 0;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+    -moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+    box-shadow: 0px 0px 3px 0px #cbcbcb;
+}
+#hold_list li table{
+    width: 100%;
+    font-size: 14px;
+}
+
+/* History */
+#history_header{
+    background: #E7E7E7;
+    border: none;
+    height: 88px;
+    padding-top: 1em;
+}
+#history_header ul{
+    padding: 1em 0 1em 0;
+}
+#history_header li{
+    width: 33%;
+    float: left;
+    list-style: none;
+}
+#history_header .icon{
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+}
+#history_header a{
+    height: 55px;
+    line-height: 55px;
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1em;
+    background: #34495E;
+    border-radius: 5px;
+}
+#history_header .active{
+    background: #E84C3D;
+}
+.holdlist_menu{ margin: 0 5px 0 5px;}
+
+#history .info_col{
+	height: 83px;
+	background: #FFFFFF;
+    margin-bottom: 5px;
+}
+#history .info_col li{
+	width: 33.3%;
+	float: left;
+	list-style: none;
+}
+#history .info_col li div{
+	color: #808080;
+	font-weight: bold;
+	height: 83px;
+	border: 1px solid #efefef;
+    text-align: center;
+}
+#history .info_col li  span{
+	margin-top: 0.2em;
+	font-size: 16px;
+}
+#history_content{
+    position: relative;
+}
+#history_list_wrapper{
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+}
+
+#history_list li{
+    list-style: none;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #efefef;
+    padding: 5px 0 5px 0;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+    -moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+    box-shadow: 0px 0px 3px 0px #cbcbcb;
+}
+#history_list li table{
+    width: 100%;
+    font-size: 12px;
+}
+#more_history_btn{
+    background: #efefef;
+    border-radius: 5px;
+    border: 1px solid #efefef;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+    -moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+    box-shadow: 0px 0px 3px 0px #cbcbcb;
+    text-align: center;
+	height:40px;
+	line-height:45px;
+}
+
+
+
+#guide .content {
+	margin-top:40px;
+}
+#guide .content > .title{
+	width: 90%;
+	height: 60px;
+	margin: -30px auto;
+	font-size: 18px;
+	text-align: center;
+	line-height: 60px;
+	color: #FFFFFF;
+	background:#34495E ;
+	-webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	-moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	box-shadow: 0px 0px 3px 0px #cbcbcb;
+}
+#guide .content > .scroll{
+	margin-top:30px;
+	padding: 5px;
+	overflow: auto;
+	-webkit-overflow-scrolling : touch;
+	height: 320px;
+	color: #808080;
+	line-height: 1.5;
+}
+#guide .content > .footer{
+	text-align: center;
+}
+#rules .content {
+	margin-top:40px;
+}
+#rules .content > .title{
+	width: 90%;
+	height: 60px;
+	margin: -30px auto;
+	font-size: 18px;
+	text-align: center;
+	line-height: 60px;
+	color: #FFFFFF;
+	background:#339933 ;
+	-webkit-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	-moz-box-shadow: 0px 0px 3px 0px #cbcbcb;
+	box-shadow: 0px 0px 3px 0px #cbcbcb;
+}
+#rules .content > .scroll{
+	margin-top:30px;
+	padding: 5px;
+	overflow: auto;
+	-webkit-overflow-scrolling : touch;
+	height: 320px;
+	color: #808080;
+	line-height: 1.5;
+}
+#rules .content > .footer{
+	text-align: center;
+}
+#active .content {
+	margin-top: 1em;
+}
+
+
+
+
+.progress {
+	width:145px;
+	height: 20px;
+	background: #ebebeb;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-radius: 10px;
+	position:absolute;
+	top:15px;
+	left:145px;
+}
+.progress > span {
+	position: relative;
+	float: left;
+	margin: 0 -1px;
+	min-width: 0px;
+	height: 18px;
+	line-height: 16px;
+	text-align: right;
+	background: #cccccc;
+	border: 1px solid;
+	border-color: #bfbfbf #b3b3b3 #9e9e9e;
+	border-radius: 10px;
+	background-image: -webkit-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+	background-image: -moz-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+	background-image: -o-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+	background-image: linear-gradient(to bottom, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.progress > span > span {
+	padding: 0 8px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #404040;
+	color: rgba(0, 0, 0, 0.7);
+	text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+}
+.progress > span:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	height: 18px;
+	background: url("../img/progress.png") 0 0 repeat-x;
+	border-radius: 10px;
+}
+.progress .green {
+	background: #85c440;
+	border-color: #78b337 #6ba031 #568128;
+	background-image: -webkit-linear-gradient(top, #b7dc8e 0%, #99ce5f 70%, #85c440 100%);
+	background-image: -moz-linear-gradient(top, #b7dc8e 0%, #99ce5f 70%, #85c440 100%);
+	background-image: -o-linear-gradient(top, #b7dc8e 0%, #99ce5f 70%, #85c440 100%);
+	background-image: linear-gradient(to bottom, #b7dc8e 0%, #99ce5f 70%, #85c440 100%);
+}
+.progress .red {
+	background: #db3a27;
+	border-color: #c73321 #b12d1e #8e2418;
+	background-image: -webkit-linear-gradient(top, #ea8a7e 0%, #e15a4a 70%, #db3a27 100%);
+	background-image: -moz-linear-gradient(top, #ea8a7e 0%, #e15a4a 70%, #db3a27 100%);
+	background-image: -o-linear-gradient(top, #ea8a7e 0%, #e15a4a 70%, #db3a27 100%);
+	background-image: linear-gradient(to bottom, #ea8a7e 0%, #e15a4a 70%, #db3a27 100%);
+}
+.progress .orange {
+	background: #f2b63c;
+	border-color: #f0ad24 #eba310 #c5880d;
+	background-image: -webkit-linear-gradient(top, #f8da9c 0%, #f5c462 70%, #f2b63c 100%);
+	background-image: -moz-linear-gradient(top, #f8da9c 0%, #f5c462 70%, #f2b63c 100%);
+	background-image: -o-linear-gradient(top, #f8da9c 0%, #f5c462 70%, #f2b63c 100%);
+	background-image: linear-gradient(to bottom, #f8da9c 0%, #f5c462 70%, #f2b63c 100%);
+}
+.progress .blue {
+	background: #5aaadb;
+	border-color: #459fd6 #3094d2 #277db2;
+	background-image: -webkit-linear-gradient(top, #aed5ed 0%, #7bbbe2 70%, #5aaadb 100%);
+	background-image: -moz-linear-gradient(top, #aed5ed 0%, #7bbbe2 70%, #5aaadb 100%);
+	background-image: -o-linear-gradient(top, #aed5ed 0%, #7bbbe2 70%, #5aaadb 100%);
+	background-image: linear-gradient(to bottom, #aed5ed 0%, #7bbbe2 70%, #5aaadb 100%);
+}
+

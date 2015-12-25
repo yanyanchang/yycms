@@ -1,0 +1,7 @@
+2015-07-17 14:12:45: -- Analysis Started by On File Change Incremental
+2015-07-17 14:12:45: 变更：1， 冲突：0， 复制时间：0， 复制状态：0/0， 错误： 0, All: 45
+2015-07-17 14:12:45: Left to Right: Copy File: 1 
+2015-07-17 14:12:45: == Sync Started by On File Change Incremental
+2015-07-17 14:12:45: 覆盖复制 '/Library/WebServer/Documents/WetBizSDK_JS/sdk/wetbizsdk.js' -> '/Library/WebServer/Documents/jdWX/ftml-www/js/wetbizsdk/wetbizsdk.js'
+2015-07-17 14:12:45: ===== ：同步完毕。时间：00:00:00，速度： 0.0/s =====, 项目同步未必： 1，错误： 0
+2015-07-17 14:12:46: 

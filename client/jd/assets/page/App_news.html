@@ -1,0 +1,14 @@
+{{each list as value i}}
+<li>
+  <div class="left"> {{value['date_str']}}</div>
+  <div class="right">
+    <div class="importent">
+      <div class="point {{value['important_color']}}"></div>
+    </div>
+    <div class="content">
+      <div class="content-title">{{value['title']}}</div>
+      <span>{{value['area']}}</span> <span>&nbsp;|&nbsp;</span> <span>NZD</span> </div>
+  </div>
+  <div class="clear"></div>
+</li>
+{{/each}}

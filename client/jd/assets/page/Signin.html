@@ -1,0 +1,330 @@
+
+  <div class="content" id="pageSignin">
+        <div class="step1"> <br/>
+            <div class="signin-base border-top border-bottom">
+                <div class="input-box"><span>&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+                    <input type="text" name="username" placeholder="请输入姓名，2-6个字"  />
+                </div>
+                <div class="input-box"><span>身份证号：</span>
+                    <input type="tel" name="idcart" placeholder="请输入18位身份证号"  />
+                </div>
+                <div class="input-box"><span>手机号码：</span>
+                    <input type="tel" name="phone" placeholder="请输入11位手机号码"  />
+                </div>
+                <div class="input-box no-border-bottom"><span>&nbsp;验&nbsp;证&nbsp;码：</span>
+                    <input type="tel" name="vcode" placeholder="输入验证码"  />
+                    <span class="vcode-send">发送验证码</span>
+                </div>
+            </div>
+            <br/>
+            <div class="signin-recommended border-top border-bottom">
+                <div class="input-box"><span>&nbsp;机&nbsp;构&nbsp;号：</span>
+                    <input type="text" name="serialcode" placeholder="机构号" value="{{serialcode}}" readonly />
+                </div>
+       
+                <div class="input-box no-border-bottom"><span>推荐机构：</span>
+                    <input type="text" name="serialcode_institutions" placeholder="推荐机构" readonly />
+                </div>
+
+            </div>
+            <br/>
+
+            <div align="center">
+                <button type="submit" id="signin_btn1" class="button">下一步</button>
+            </div>
+            <br/>
+
+            <div align="center"><a class="m-link" onClick="location.href='#pageLogin'">已有帐号，马上登录</a></div>
+
+        </div>
+        <div class="step2" >
+            <br/>
+            <div class="upload-photo" id="photo_upload_1"><i class="fa fa-camera"></i> 身份证正面</div>
+            <br/>
+            <div class="upload-photo" id="photo_upload_2"><i class="fa fa-camera"></i> 身份证反面</div>
+            <br/>
+            <div class="upload-photo" id="photo_upload_3"><i class="fa fa-camera"></i> 银行卡正面</div>
+            <br/>
+            <div align="center">
+                <button type="submit" id="signin_btn2" class="button">上传文件</button>
+            </div>
+        </div>
+        <div class="step3" > <br/>
+            <div class="password-div border-top border-bottom">
+                <div class="input-box"><span>&nbsp;密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
+                    <input type="password" name="password" id="txt_password" placeholder="请输入密码" />
+                </div>
+                <div class="input-box no-border-bottom"><span>密码确认：</span>
+                    <input type="password" name="txt_repassword" placeholder="再次输入密码" />
+                </div>
+            </div>
+            <br/>
+
+            <div align="center">
+                <button type="button" id="signin_btn3" class="button">提交注册</button>
+            </div>
+        </div>
+        <div class="step4">
+            <br/>
+            <div class="icon1">
+                <img src="skin/images/login_success.png"/>
+            </div>
+            <div class="font-m" align="center">注册成功！</div>
+            <br/>
+            <div align="center">
+                <button type="button" id="signin_btn4" class="button">完&nbsp;&nbsp;成</button>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+var sign_in=function(){
+    var $page=$('#pageSignin');
+    $page.find('.step1').show();
+    $page.find('.step2').hide();
+    $page.find('.step3').hide();
+    $page.find('.step4').hide();
+
+    $page.find('input[type=text]').val('');
+    $page.find('.vcode-send').unbind('click');
+    $page.find('.vcode-send').bind('click',function(){
+        send_verfiy_sms();
+    });
+
+    var post_data;
+    var _serialcode='36390';
+    $page.find('input[name=serialcode]').val(_serialcode);
+    _serialcode=$page.find('input[name=serialcode]').val();
+    var _username,_idcart,_phone,_vcode,_password,_repassword;
+
+    getSerialCode();
+
+    $('#signin_btn1').unbind('click');
+    $('#signin_btn1').bind('click',function(){
+        _username = $page.find('input[name=username]').val();
+        _idcart = $page.find('input[name=idcart]').val();
+        _phone = $page.find('input[name=phone]').val();
+        _vcode = $page.find('input[name=vcode]').val();
+        if(_username.length==0){
+            $.MsgBox.Tip('error',"请输入姓名！");
+            return false;
+        }
+        if(_idcart.length==0){
+            $.MsgBox.Tip('error',"请输入身份证号！");
+            return false;
+        }
+        if(_phone.length==0){
+            $.MsgBox.Tip('error',"请输入手机号！");
+            return false;
+        }
+        if(_vcode.length==0){
+            $.MsgBox.Tip('error',"请输入验证码！");
+            return false;
+        }
+        if (!checkMobile(_phone) ||  _phone.length!=11) {
+            $.MsgBox.Tip('error',"请输入合法手机号码！");
+            return false;
+        }
+        $('#signin_btn1').attr('disabled','true');
+        //表单验证
+        var verfiy_data={
+            'action':'verfiy',
+            'serialcode':_serialcode,
+            'username':_username,
+            'phone':_phone,
+            'idcard':_idcart,
+            'vcode':_vcode,
+            'password':_password
+        }
+        $.ajax({
+            url:"api.php",
+            data:verfiy_data,
+            type:"POST",
+            beforeSend:function(){},
+            success:function(data){
+                if(data==""){
+                    $page.find('.step1').hide();
+                    $page.find('.step2').show();
+                }else{
+                    data = eval("(" + data + ")");
+                    $.MsgBox.Tip('error',data.retText);
+                }
+                console.log(data);
+            },
+            complete:function(){
+                $('#signin_btn1').removeAttr('disabled');
+            }
+        });
+    });
+
+    $('#signin_btn2').unbind('click');
+    $('#signin_btn2').bind('click',function(){
+        //uploadPhoto(function(){
+        $page.find('.step2').hide();
+        $page.find('.step3').show();
+        //});
+    })
+
+    $('#signin_btn3').unbind('click');
+    $('#signin_btn3').bind('click',function(){
+        _password=$page.find('input[name=password]').val();
+        _repassword=$page.find('input[name=repassword]').val();
+
+        if(_password.length==0 || _password.length<6 ){
+            $.MsgBox.Tip('error',"请输入密码,最小6位数、字符、下划线！");
+            return false;
+        }
+        if(_repassword.length==0 ){
+            $.MsgBox.Tip('error',"请输入密码确认！");
+            return false;
+        }
+        if(_repassword!=_password){
+            $.MsgBox.Tip('error',"请密码确认不正确！");
+            return false;
+        }
+        $('#signin_btn3').attr('disabled','true');
+        post_data={
+            'action':'register',
+            'serialcode':_serialcode,
+            'username':_username,
+            'phone':_phone,
+            'idcard':_idcart,
+            'vcode':_vcode,
+            'password':_password
+        }
+        $.ajax({
+            url:"api.php",
+            data:post_data,
+            type:"POST",
+            beforeSend:function(){},
+            success:function(data){
+                data = eval("(" + data + ")");
+                console.log(data);
+                if(data.retCode==0){
+                    downLoadPhoto(data.loginCode,function(){console.log('upload')});
+                    loginCode=data.loginCode;
+                    $page.find('.step3').hide();
+                    $page.find('.step4').show();
+                }else{
+                    $.MsgBox.Tip('error',data.retText);
+                }
+            },
+            complete: function(){
+                $('#signin_btn3').removeAttr('disabled');
+            }
+        });
+    })
+
+    $('#signin_btn4').unbind('click');
+    $('#signin_btn4').bind('click',function(){
+        location.href='#pageLogin';
+    })
+
+    $('#photo_upload_1').unbind('click');
+    $('#photo_upload_1').bind('click',function(){
+        takePhoto('1',function(res,images){
+            $('#photo_upload_1').html('已选择文件');
+        }) ;
+    })
+    $('#photo_upload_2').unbind('click');
+    $('#photo_upload_2').bind('click',function(){
+        takePhoto('2',function(res,images){
+            $('#photo_upload_2').html('已选择文件');
+        }) ;
+    })
+    $('#photo_upload_3').unbind('click');
+    $('#photo_upload_3').bind('click',function(){
+        takePhoto('3',function(res,images){
+            $('#photo_upload_3').html('已选择文件');
+        }) ;
+    })
+    $page.find('input[name=serialcode]').unbind('keyup');
+    $page.find('input[name=serialcode]').bind('keyup',function(){
+        _serialcode=$page.find('input[name=serialcode]').val();
+        getSerialCode();
+    })
+
+    //加载机构
+    function getSerialCode(){
+        $.ajax({
+            url:"api.php",
+            data:{'action':'getserial','serialcode':_serialcode},
+            type:"POST",
+            beforeSend:function(){},
+            success:function(data){
+                data = eval("(" + data + ")");
+                console.log(data)
+                if(data.retCode==0){
+                    if(_serialcode==''){
+                        $page.find('input[name=serialcode]').val(data.serialcode);
+                    }
+                    $page.find('input[name=serialcode_institutions]').val(data.dealerName);
+                    _serialcode=data.serialcode;
+
+                }else{
+                    $page.find('input[name=serialcode_institutions]').val('');
+                }
+            }
+        });
+    }
+    function checkMobile(str) {
+        console.log(str);
+        var re = /^1\d{10}$/
+        if (re.test(str)) {
+            return true ;
+        } else {
+            return false;
+        }
+    }
+    function send_verfiy_sms(){
+        var $obj=$('.vcode-send');
+        var SMS = {
+            node:null,
+            count:180,
+            start:function(){
+                //console.log(this.count);
+                if(this.count > 0){
+                    this.node.html(this.count--);
+                    var _this = this;
+                    setTimeout(function(){
+                        _this.start();
+                    },1000);
+                }else{
+                    this.node.attr("send",0);
+                    this.node.html('重发');
+                    this.count = 180;
+                }
+            },
+            //初始化
+            init:function(node){
+                this.node = node;
+                this.node.attr("send",1);
+                this.start();
+            }
+        };
+        if($obj.attr('send')=='1'){
+            return ;
+        }
+        //验证
+        var mobile = $('#pageSignin').find('input[name=phone]').val() ;
+
+        if (checkMobile(mobile) &&  mobile.length==11) {
+            $.ajax({
+                url:"api.php",
+                data:{'action':'sendverfiy','phone':mobile},
+                type:"POST",
+                beforeSend:function(){},
+                success:function(data){
+                    data = eval("(" + data + ")");
+                    console.log(data);
+                    $.MsgBox.Tip('success',"验证码已经发发出");
+                    SMS.init($obj);
+                }
+            });
+        }else{
+            $.MsgBox.Tip('error',"请输入合法手机号码");
+            return false;
+        }
+    }
+}
+</script>

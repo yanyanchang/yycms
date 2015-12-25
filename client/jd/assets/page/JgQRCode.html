@@ -1,0 +1,47 @@
+<div class="content" >
+    <br/>
+    <div class="step1">
+        <div align="center" style="text-align:center">
+
+                <img src="skin/images/phonelogo.gif" width="50%"/>
+
+           </div>
+        <br/>
+        
+    <div class="signin-recommended border-top border-bottom">
+        <div class="input-box"><span>&nbsp;机&nbsp;构&nbsp;号：</span>
+            <input type="text" name="serialcode" placeholder="机构号" value="{{serialcode}}" />
+        </div>
+        <div class="input-box no-border-bottom"><span>推荐机构：</span>
+            <input type="text" name="serialcode_institutions" placeholder="推荐机构" readonly />
+        </div>
+    </div>
+        <br/>
+        <div align="center">
+            <button type="button"  class="button  creat_qrcode_btn"   >申请推广</button>
+        </div>
+    </div>
+    <div class="step2 hide">
+        <div style="padding: 2em; border: 1px solid #777777; margin: 0.5em; background: #ffffff; text-align: center;">
+        <img src="http://wx.bymiao.com/wx/xmWP/api.php?action=qrcode&data=" class="qrcode" width="100%"/>
+        </div>
+
+        <div style=" font-size:1em; padding: 2em;  margin: 0.5em; font-size: 1em;">
+            打开微信，点击底部的“发现”，使用 “扫一扫” 即可将网页分享到我的朋友圈。
+        </div>
+        <br/>
+        <div align="center">
+            <!--
+           <input type="text" value="" class="url"/>
+
+           <button type="button"  class="copy_btn" >复制</button>
+           -->
+        </div>
+        <!--
+        <div align="center">
+            <button type="button"  class="button share_btn"  >分享到朋友圈 </button>
+        </div>
+        -->
+    </div>
+    <br/>
+</div>

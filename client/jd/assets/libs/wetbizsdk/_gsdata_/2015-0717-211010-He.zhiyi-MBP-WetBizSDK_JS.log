@@ -1,0 +1,9 @@
+2015-07-17 21:10:10: -- Analysis Started by User
+2015-07-17 21:10:10: 变更：1， 冲突：0， 复制时间：0， 复制状态：0/0， 错误： 0, All: 45
+2015-07-17 21:10:10: Left to Right: Copy File: 1 
+2015-07-17 21:10:10: ----- ：分析已结束。 历时 00:00:00， 速度： Many 个文件/秒 -----
+2015-07-17 21:10:10: 
+2015-07-17 21:10:13: == Sync Started by User
+2015-07-17 21:10:13: 覆盖复制 '/Library/WebServer/Documents/WetBizSDK_JS/sdk/wetbizsdk.js' -> '/Library/WebServer/Documents/jdWX/ftml-www/js/wetbizsdk/wetbizsdk.js'
+2015-07-17 21:10:13: ===== ：同步完毕。时间：00:00:00，速度： 0.0/s =====, 项目同步未必： 1，错误： 0
+2015-07-17 21:10:13: 
